@@ -18,7 +18,9 @@ export const ContentContainer = styled.div`
 `;
 
 export const Headline = styled.h1`
-  font-size: 100px;
+  font-size: 80px;
+  font-family: 'futura';
+  margin-top: 15px; 
 `;
 
 export const Paragraph = styled.p`
@@ -116,4 +118,9 @@ export const CheckBox = styled.input`
       transition: 0.2s;
     }
   }
+`;
+
+export const Spacing = styled.div`
+    padding-top: 5px;
+    padding-bottom: 5px;
 `;

@@ -2,8 +2,8 @@ import React, { MouseEvent, useRef } from 'react';
 import ReactTooltip from 'react-tooltip';
 import DecisionCard from './components/decision-card';
 import OptionPill from './components/option-pill';
-import DecideyLogo from './images/decidey-logo.png';
 import { 
+  Headline, 
   Button, 
   ButtonContainer, 
   CheckBox, 
@@ -14,7 +14,8 @@ import {
   ContentContainer, 
   InputField, 
   Paragraph, 
-  CardContainer 
+  CardContainer, 
+  Spacing
 } from './components';
 
 function App() {
@@ -72,11 +73,11 @@ function App() {
   return (
     <Container>
       <ContentContainer>
-        <img src={DecideyLogo}/>
+        <Headline>Decidey</Headline>
         <Paragraph>Optionen eingeben</Paragraph>
         <form onSubmit={onFormSubmit}>
           <InputField type="text" ref={inputRef}/>
-          <br/>
+          <Spacing/>
           <ButtonContainer>
             <Button type='submit'>Hinzufügen</Button>
             <Button onClick={resetOptions}>Zurücksetzen</Button>
@@ -93,16 +94,18 @@ function App() {
             </Paragraph>
           </CheckboxContainer>
         </form>
-        <br/>
+        <Spacing/>
           {options.map((option => (
             <CardContainer>
               <OptionPill option={option} onDeleteClick={removeOption}/>
             </CardContainer>
           )))}
-          <br/><br/>
+          <Spacing/>
           {options.length > 0 && (
             <Button onClick={makeDecision}>Entscheiden</Button>
           )}
+          <Spacing/>
+          <Spacing/>
           <Paragraph>
             Entscheidung
           </Paragraph>
