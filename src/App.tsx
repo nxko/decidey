@@ -97,7 +97,7 @@ function App() {
         <Spacing/>
           {options.map((option => (
             <CardContainer>
-              <OptionPill option={option} onDeleteClick={removeOption}/>
+              <OptionPill option={option} onDeleteClick={removeOption} isActive={latestDecision === option}/>
             </CardContainer>
           )))}
           <Spacing/>
