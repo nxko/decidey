@@ -1,4 +1,4 @@
-import React, { MouseEvent, useRef } from 'react';
+import React, { ChangeEvent, MouseEvent, useRef } from 'react';
 import ReactTooltip from 'react-tooltip';
 import DecisionCard from './components/decision-card';
 import OptionPill from './components/option-pill';
@@ -22,6 +22,7 @@ function App() {
   const [options, setOptions] = React.useState<string[]>([]);
   const [decisions, setDecisions] = React.useState<string[]>([]);
   const [latestDecision, setLatestDecision] = React.useState<string>();
+  const [koModeActive, setKoModeActive] = React.useState<boolean>(false);
 
   const last5 = decisions.slice(0, 5);
   let inputRef = useRef<HTMLInputElement>(null);
@@ -60,12 +61,19 @@ function App() {
      setLatestDecision('');
      console.log(options);
    }
+  
+   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setKoModeActive(e.currentTarget.checked);
+   }
 
    const makeDecision = () => {
     const randomNum = Math.floor(Math.random() * options.length);
     const option = options[randomNum]; 
-      setDecisions([option,...decisions]);
-      setLatestDecision(option);
+    setDecisions([option,...decisions]);
+    setLatestDecision(option);
+    if(koModeActive) {
+      removeOption(option);
+    }
   };
 
   const tooltipMessage = 'Jede Option kann nur 1x ausgewählt werden.'
@@ -85,7 +93,7 @@ function App() {
           <CheckboxContainer>
               <p data-tip={tooltipMessage}>
               <CheckBoxWrapper>
-                <CheckBox id="checkbox" type="checkbox" />
+                <CheckBox id="checkbox" type="checkbox" onChange={handleCheckboxChange} />
                 <CheckBoxLabel htmlFor="checkbox" />
               </CheckBoxWrapper>
               </p>
