@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from "styled-components";
 
 
@@ -19,11 +20,11 @@ const Card = styled.div`
 
 function DecisionCard({decision}:DecisionCardProps) {
 return (
-    <Card>
-        <p>
-        {decision}
-        </p>
-    </Card>
+  <Card>
+    <p>
+      {decision}
+    </p>
+  </Card>
 )
 };
 

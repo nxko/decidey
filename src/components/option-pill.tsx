@@ -1,9 +1,14 @@
+import React from 'react';
 import styled from "styled-components";
 import xIcon from '../icons/x-mark.svg';
 
 type OptionPillProps = {
  option: string, 
  onDeleteClick?: (option: string) => void; 
+}
+
+OptionPill.defaultProps = {
+    onDeleteClick: undefined,
 }
 
 const Pill = styled.div`
@@ -32,16 +37,18 @@ const CloseIcon = styled.img`
 `;
 
 function OptionPill({
-    option, onDeleteClick
+    option, onDeleteClick,
 }:OptionPillProps) {
 return (
-    <Pill>
-        {option}
-        {onDeleteClick && (
-            <CloseIcon src={xIcon} alt="delete icon" onClick={() => onDeleteClick(option)}/>
+  <Pill>
+    {option}
+    {onDeleteClick && (
+    <CloseIcon src={xIcon} alt="delete icon" onClick={() => onDeleteClick(option)} />
         )}
-    </Pill>
+  </Pill>
 )
 };
+
+
 
 export default OptionPill;

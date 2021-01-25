@@ -28,15 +28,15 @@ function App() {
 
   const onFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const option = inputRef.current!.value;
+    const option = inputRef.current?.value;
     if(option === 'testdata') {
       setOptions(['Lasagne', 'Pizza', 'Spaghetti', 'Schnitzel', 'Suppe']);
     } else if(option === '') {
       alert('Bitte etwas in Textfeld eingeben!');
-    } else {
+    } else if (option) {
       setOptions([...options, option])
     }
-    inputRef.current!.value = '';
+    if (inputRef.current?.value) inputRef.current.value = '';
   }
 
   const removeOption = (option: string) => {
@@ -76,66 +76,66 @@ function App() {
         <Headline>Decidey</Headline>
         <Paragraph>Optionen eingeben</Paragraph>
         <form onSubmit={onFormSubmit}>
-          <InputField type="text" ref={inputRef}/>
-          <Spacing/>
+          <InputField type="text" ref={inputRef} />
+          <Spacing />
           <ButtonContainer>
             <Button type='submit'>Hinzufügen</Button>
             <Button onClick={resetOptions}>Zurücksetzen</Button>
           </ButtonContainer>
           <CheckboxContainer>
-              <p data-tip={tooltipMessage}>
+            <p data-tip={tooltipMessage}>
               <CheckBoxWrapper>
                 <CheckBox id="checkbox" type="checkbox" />
                 <CheckBoxLabel htmlFor="checkbox" />
               </CheckBoxWrapper>
-              </p>
+            </p>
             <Paragraph>
               KO-Mode
             </Paragraph>
           </CheckboxContainer>
         </form>
-        <Spacing/>
-          {options.map((option => (
-            <CardContainer>
-              <OptionPill option={option} onDeleteClick={removeOption}/>
-            </CardContainer>
+        <Spacing />
+        {options.map((option => (
+          <CardContainer key={option}>
+            <OptionPill option={option} onDeleteClick={removeOption} />
+          </CardContainer>
           )))}
-          <Spacing/>
-          {options.length > 0 && (
-            <Button onClick={makeDecision}>Entscheiden</Button>
+        <Spacing />
+        {options.length > 0 && (
+        <Button onClick={makeDecision}>Entscheiden</Button>
           )}
-          <Spacing/>
-          <Spacing/>
-          <Paragraph>
-            Entscheidung
-          </Paragraph>
+        <Spacing />
+        <Spacing />
+        <Paragraph>
+          Entscheidung
+        </Paragraph>
           
-          {latestDecision && latestDecision !== '' && (
-            <CardContainer>
-              <DecisionCard decision={latestDecision}/>
-            </CardContainer>
+        {latestDecision && latestDecision !== '' && (
+        <CardContainer>
+          <DecisionCard decision={latestDecision} />
+        </CardContainer>
           )}
 
-          {decisions.length > 0 && (
-            <>
-              <Paragraph>
-                Letzte 5 Entscheidungen
-              </Paragraph>
-                {last5.map((decision) => (
-                  <CardContainer>
-                      <OptionPill option={decision}/>
-                  </CardContainer>
+        {decisions.length > 0 && (
+        <>
+          <Paragraph>
+            Letzte 5 Entscheidungen
+          </Paragraph>
+          {last5.map((decision) => (
+            <CardContainer key={decision}>
+              <OptionPill option={decision} />
+            </CardContainer>
                 ))}
-            </>
+        </>
           )}
           
-          <ReactTooltip 
-                place='bottom'
-                type='light'
-                effect='solid'
-                multiline
-            />
-        </ContentContainer>
+        <ReactTooltip 
+          place='bottom'
+          type='light'
+          effect='solid'
+          multiline
+        />
+      </ContentContainer>
     </Container>
   );
 }
