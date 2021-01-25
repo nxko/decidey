@@ -1,4 +1,4 @@
-import React, { ChangeEvent, MouseEvent, useRef } from 'react';
+import React, { MouseEvent, useRef } from 'react';
 import ReactTooltip from 'react-tooltip';
 import DecisionCard from './components/decision-card';
 import OptionPill from './components/option-pill';
@@ -22,7 +22,7 @@ function App() {
   const [options, setOptions] = React.useState<string[]>([]);
   const [decisions, setDecisions] = React.useState<string[]>([]);
   const [latestDecision, setLatestDecision] = React.useState<string>();
-  const [koModeActive, setKoModeActive] = React.useState<boolean>(false);
+  const [isKoModeActive, setIsKoModeActive] = React.useState<boolean>(false);
 
   const last5 = decisions.slice(0, 5);
   let inputRef = useRef<HTMLInputElement>(null);
@@ -63,7 +63,7 @@ function App() {
    }
   
    const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setKoModeActive(e.currentTarget.checked);
+    setIsKoModeActive(e.currentTarget.checked);
    }
 
    const makeDecision = () => {
@@ -71,7 +71,7 @@ function App() {
     const option = options[randomNum]; 
     setDecisions([option,...decisions]);
     setLatestDecision(option);
-    if(koModeActive) {
+    if(isKoModeActive) {
       removeOption(option);
     }
   };
