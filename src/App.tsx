@@ -32,40 +32,40 @@ function App() {
     if(option === 'testdata') {
       setOptions(['Lasagne', 'Pizza', 'Spaghetti', 'Schnitzel', 'Suppe']);
     } else if(option === '') {
-       alert('Bitte etwas in Textfeld eingeben!');
-    }else {
+      alert('Bitte etwas in Textfeld eingeben!');
+    } else {
       setOptions([...options, option])
     }
     inputRef.current!.value = '';
-   }
+  }
 
-   const removeOption = (option: string) => {
-     if(option) {
-       let i = 0; 
-       while (i < options.length) {
-          if(options[i] === option) {
-            options.splice(i, 1);
-            setOptions([...options]);
-          } else {
-            i++; 
-          }
-       }
-     }
-   }
+  const removeOption = (option: string) => {
+    if(option) {
+      let i = 0; 
+      while (i < options.length) {
+        if(options[i] === option) {
+          options.splice(i, 1);
+          setOptions([...options]);
+        } else {
+          i++; 
+        }
+      }
+    }
+  }
 
-   const resetOptions = (e: MouseEvent<HTMLButtonElement>) => {
-     e.preventDefault()
-     setOptions([]);
-     setDecisions([]);
-     setLatestDecision('');
-     console.log(options);
-   }
+  const resetOptions = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    setOptions([]);
+    setDecisions([]);
+    setLatestDecision('');
+    console.log(options);
+  }
 
-   const makeDecision = () => {
+  const makeDecision = () => {
     const randomNum = Math.floor(Math.random() * options.length);
     const option = options[randomNum]; 
-      setDecisions([option,...decisions]);
-      setLatestDecision(option);
+    setDecisions([option,...decisions]);
+    setLatestDecision(option);
   };
 
   const tooltipMessage = 'Jede Option kann nur 1x ausgewählt werden.'
@@ -134,7 +134,7 @@ function App() {
                 type='light'
                 effect='solid'
                 multiline
-              />
+            />
         </ContentContainer>
     </Container>
   );
