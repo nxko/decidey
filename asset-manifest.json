@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/decidey/static/css/main.bb37f9f7.chunk.css",
-    "main.js": "/decidey/static/js/main.c94a0004.chunk.js",
-    "main.js.map": "/decidey/static/js/main.c94a0004.chunk.js.map",
+    "main.js": "/decidey/static/js/main.b26c3787.chunk.js",
+    "main.js.map": "/decidey/static/js/main.b26c3787.chunk.js.map",
     "runtime-main.js": "/decidey/static/js/runtime-main.6779cc69.js",
     "runtime-main.js.map": "/decidey/static/js/runtime-main.6779cc69.js.map",
-    "static/js/2.8c06fb9a.chunk.js": "/decidey/static/js/2.8c06fb9a.chunk.js",
-    "static/js/2.8c06fb9a.chunk.js.map": "/decidey/static/js/2.8c06fb9a.chunk.js.map",
+    "static/js/2.1e023947.chunk.js": "/decidey/static/js/2.1e023947.chunk.js",
+    "static/js/2.1e023947.chunk.js.map": "/decidey/static/js/2.1e023947.chunk.js.map",
     "static/js/3.6a91793e.chunk.js": "/decidey/static/js/3.6a91793e.chunk.js",
     "static/js/3.6a91793e.chunk.js.map": "/decidey/static/js/3.6a91793e.chunk.js.map",
     "index.html": "/decidey/index.html",
     "static/css/main.bb37f9f7.chunk.css.map": "/decidey/static/css/main.bb37f9f7.chunk.css.map",
-    "static/js/2.8c06fb9a.chunk.js.LICENSE.txt": "/decidey/static/js/2.8c06fb9a.chunk.js.LICENSE.txt",
+    "static/js/2.1e023947.chunk.js.LICENSE.txt": "/decidey/static/js/2.1e023947.chunk.js.LICENSE.txt",
     "static/media/arrow-down-sign-to-navigate.e4ed3c68.svg": "/decidey/static/media/arrow-down-sign-to-navigate.e4ed3c68.svg",
     "static/media/x-mark.6ce40db1.svg": "/decidey/static/media/x-mark.6ce40db1.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.6779cc69.js",
-    "static/js/2.8c06fb9a.chunk.js",
+    "static/js/2.1e023947.chunk.js",
     "static/css/main.bb37f9f7.chunk.css",
-    "static/js/main.c94a0004.chunk.js"
+    "static/js/main.b26c3787.chunk.js"
   ]
 }
