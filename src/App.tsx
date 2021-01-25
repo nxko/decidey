@@ -19,7 +19,8 @@ import {
   CardContainer, 
   Spacing,
   DecideButton,
-  DecisionParagraph
+  DecisionParagraph,
+  Footer
 } from './components';
 
 function App() {
@@ -145,7 +146,9 @@ function App() {
           )}
           <Spacing/>
           <Spacing/>
-          
+          <Footer>
+                Made by Niko Kottre - 2021 &copy; - <a href="https://xtheon.com">www.xtheon.com</a>
+          </Footer>
           <ReactTooltip 
                 place='bottom'
                 type='light'
