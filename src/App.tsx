@@ -142,10 +142,10 @@ function App() {
             Letzte 5 Entscheidungen
           </Paragraph>
           {last5.map((decision) => (
-            <CardContainer key={decision}>
+            <CardContainer>
               <OptionPill option={decision} />
             </CardContainer>
-                ))}
+          ))}
         </>
           )}
 
