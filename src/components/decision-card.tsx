@@ -15,6 +15,10 @@ const Card = styled.div`
     width: max-content;
     border-radius: 15px;
     font-size: 30px; 
+    @media (max-width: 576px) {
+        font-size: 25px;
+        padding: 15px 85px;
+    }
 `;
 
 function DecisionCard({decision}:DecisionCardProps) {

@@ -3,6 +3,7 @@ import React, { MouseEvent, useRef } from 'react';
 import ReactTooltip from 'react-tooltip';
 import DecisionCard from './components/decision-card';
 import OptionPill from './components/option-pill';
+import arrowIcon from './icons/arrow-down-sign-to-navigate.svg';
 import { 
   Headline, 
   Button, 
@@ -17,7 +18,8 @@ import {
   Paragraph, 
   CardContainer, 
   Spacing,
-  DecideButton
+  DecideButton,
+  DecisionParagraph
 } from './components';
 
 function App() {
@@ -116,11 +118,11 @@ function App() {
             <DecideButton onClick={makeDecision}>Entscheiden</DecideButton>
           )}
           <Spacing/>
-          <Spacing/>
-          <Paragraph>
+          <DecisionParagraph>
             Entscheidung
-          </Paragraph>
-          
+          </DecisionParagraph>
+          <img src={arrowIcon} height='15px'/>
+          <Spacing/>
           {latestDecision && latestDecision !== '' && (
             <CardContainer>
               <DecisionCard decision={latestDecision}/>
@@ -139,6 +141,8 @@ function App() {
                 ))}
             </>
           )}
+          <Spacing/>
+          <Spacing/>
           
           <ReactTooltip 
                 place='bottom'
