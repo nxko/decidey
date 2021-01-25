@@ -144,8 +144,12 @@ function App() {
                 ))}
             </>
           )}
+
           <Spacing/>
           <Spacing/>
+          <Spacing/>
+          <Spacing/>
+          
           <Footer>
                 Made by Niko Kottre - 2021 &copy; - <a href="https://xtheon.com">www.xtheon.com</a>
           </Footer>
