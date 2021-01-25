@@ -151,3 +151,16 @@ export const Spacing = styled.div`
     padding-top: 5px;
     padding-bottom: 5px;
 `;
+
+export const Footer = styled.div`
+  position: absolute;
+  bottom: 5px; 
+  left: 0;
+  width: 100vw;
+  font-family: 'Montserrat';
+  font-size: 10px;
+  opacity: 0.5;
+  a {
+    color: #ffffff;
+  }
+`;
