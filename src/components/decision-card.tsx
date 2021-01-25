@@ -19,10 +19,9 @@ const Card = styled.div`
     max-width: 250px; 
     word-wrap: break-word;
     @media (max-width: 576px) {
-        font-size: 25px;
-        padding: 50px 95px;
-        max-width: 130px;
-      
+      width: 250px;  
+      font-size: 25px;
+      padding: 50px 30px;
     }
 `;
 
