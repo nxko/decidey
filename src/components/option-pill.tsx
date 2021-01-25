@@ -2,8 +2,8 @@ import styled from "styled-components";
 import xIcon from '../icons/x-mark.svg';
 
 type OptionPillProps = {
- option: string, 
- onDeleteClick?: (option: string) => void; 
+    option: string, 
+    onDeleteClick?: (option: string) => void; 
 }
 
 const Pill = styled.div`
