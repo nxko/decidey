@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import xIcon from '../icons/x-mark.svg';
 
 type OptionPillProps = {
@@ -8,7 +8,7 @@ type OptionPillProps = {
 }
 
 const Pill = styled.div<{isActive: boolean}>`
-    background-color: ${(props) => props.isActive ? '#f896ff;' : '#ffffff'};
+    background-color: ${({isActive}) => isActive ? '#f896ff;' : '#ffffff'};
     color:rgb(182,68,242);
     font-family: 'futura';
     text-align: center; 
