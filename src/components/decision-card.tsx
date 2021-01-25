@@ -12,22 +12,24 @@ const Card = styled.div`
     font-family: 'Montserrat';
     font-weight: 800; 
     text-align: center; 
-    padding: 20px 90px; 
+    padding: 50px 90px; 
     width: max-content;
     border-radius: 15px;
     font-size: 30px; 
+    max-width: 250px; 
+    word-wrap: break-word;
     @media (max-width: 576px) {
         font-size: 25px;
-        padding: 15px 85px;
+        padding: 50px 95px;
+        max-width: 130px;
+      
     }
 `;
 
 function DecisionCard({decision}:DecisionCardProps) {
 return (
   <Card>
-    <p>
       {decision}
-    </p>
   </Card>
 )
 };

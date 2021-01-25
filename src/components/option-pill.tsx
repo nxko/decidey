@@ -23,6 +23,10 @@ const Pill = styled.div<{isActive: boolean}>`
     border-radius: 15px;
     margin: 2px; 
     position: relative;
+    @media (max-width: 576px) {
+        max-width: 220px;
+        word-wrap: break-word;
+    }
 `;
 
 const CloseIcon = styled.img`
