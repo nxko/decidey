@@ -2,12 +2,13 @@ import styled from "styled-components";
 import xIcon from '../icons/x-mark.svg';
 
 type OptionPillProps = {
-    option: string, 
-    onDeleteClick?: (option: string) => void; 
+ option: string, 
+ onDeleteClick?: (option: string) => void; 
+ isActive?: boolean;
 }
 
-const Pill = styled.div`
-    background-color: white;
+const Pill = styled.div<{isActive: boolean}>`
+    background-color: ${({isActive}) => isActive ? '#f0ccd4' : '#ffffff'};
     color: #d97b93;
     font-family: 'Montserrat';
     text-align: center; 
@@ -33,10 +34,10 @@ const CloseIcon = styled.img`
 `;
 
 function OptionPill({
-    option, onDeleteClick
+    option, onDeleteClick, isActive = false,
 }:OptionPillProps) {
 return (
-    <Pill>
+    <Pill isActive={isActive}>
         {option}
         {onDeleteClick && (
             <CloseIcon src={xIcon} alt="delete icon" onClick={() => onDeleteClick(option)}/>
