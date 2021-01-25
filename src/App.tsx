@@ -1,7 +1,9 @@
+import './App.css';
 import React, { MouseEvent, useRef } from 'react';
 import ReactTooltip from 'react-tooltip';
 import DecisionCard from './components/decision-card';
 import OptionPill from './components/option-pill';
+import arrowIcon from './icons/arrow-down-sign-to-navigate.svg';
 import { 
   Headline, 
   Button, 
@@ -15,13 +17,16 @@ import {
   InputField, 
   Paragraph, 
   CardContainer, 
-  Spacing
+  Spacing,
+  DecideButton,
+  DecisionParagraph
 } from './components';
 
 function App() {
   const [options, setOptions] = React.useState<string[]>([]);
   const [decisions, setDecisions] = React.useState<string[]>([]);
   const [latestDecision, setLatestDecision] = React.useState<string>();
+  const [isKoModeActive, setIsKoModeActive] = React.useState<boolean>(false);
 
   const last5 = decisions.slice(0, 5);
   let inputRef = useRef<HTMLInputElement>(null);
@@ -32,40 +37,47 @@ function App() {
     if(option === 'testdata') {
       setOptions(['Lasagne', 'Pizza', 'Spaghetti', 'Schnitzel', 'Suppe']);
     } else if(option === '') {
-       alert('Bitte etwas in Textfeld eingeben!');
-    }else {
+      alert('Bitte etwas in Textfeld eingeben!');
+    } else {
       setOptions([...options, option])
     }
     inputRef.current!.value = '';
-   }
+  }
 
-   const removeOption = (option: string) => {
-     if(option) {
-       let i = 0; 
-       while (i < options.length) {
-          if(options[i] === option) {
-            options.splice(i, 1);
-            setOptions([...options]);
-          } else {
-            i++; 
-          }
-       }
-     }
-   }
+  const removeOption = (option: string) => {
+    if(option) {
+      let i = 0; 
+      while (i < options.length) {
+        if(options[i] === option) {
+          options.splice(i, 1);
+          setOptions([...options]);
+        } else {
+          i++; 
+        }
+      }
+    }
+  }
 
-   const resetOptions = (e: MouseEvent<HTMLButtonElement>) => {
-     e.preventDefault()
-     setOptions([]);
-     setDecisions([]);
-     setLatestDecision('');
-     console.log(options);
-   }
+  const resetOptions = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    setOptions([]);
+    setDecisions([]);
+    setLatestDecision('');
+    console.log(options);
+  }
+  
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setIsKoModeActive(e.currentTarget.checked);
+  }
 
-   const makeDecision = () => {
+  const makeDecision = () => {
     const randomNum = Math.floor(Math.random() * options.length);
     const option = options[randomNum]; 
-      setDecisions([option,...decisions]);
-      setLatestDecision(option);
+    setDecisions([option,...decisions]);
+    setLatestDecision(option);
+    if(isKoModeActive) {
+      removeOption(option);
+    }
   };
 
   const tooltipMessage = 'Jede Option kann nur 1x ausgewählt werden.'
@@ -85,7 +97,7 @@ function App() {
           <CheckboxContainer>
               <p data-tip={tooltipMessage}>
               <CheckBoxWrapper>
-                <CheckBox id="checkbox" type="checkbox" />
+                <CheckBox id="checkbox" type="checkbox" onChange={handleCheckboxChange} />
                 <CheckBoxLabel htmlFor="checkbox" />
               </CheckBoxWrapper>
               </p>
@@ -101,23 +113,26 @@ function App() {
             </CardContainer>
           )))}
           <Spacing/>
+          <Spacing/>
           {options.length > 0 && (
-            <Button onClick={makeDecision}>Entscheiden</Button>
+            <DecideButton onClick={makeDecision}>Entscheiden</DecideButton>
           )}
           <Spacing/>
-          <Spacing/>
-          <Paragraph>
-            Entscheidung
-          </Paragraph>
-          
-          {latestDecision && latestDecision !== '' && (
-            <CardContainer>
-              <DecisionCard decision={latestDecision}/>
-            </CardContainer>
-          )}
 
           {decisions.length > 0 && (
             <>
+              <DecisionParagraph>
+                Entscheidung
+              </DecisionParagraph>
+              
+              <img src={arrowIcon} height='15px'/>
+              <Spacing/>
+
+              {latestDecision && latestDecision !== '' && (
+                <CardContainer>
+                  <DecisionCard decision={latestDecision}/>
+                </CardContainer>
+              )}
               <Paragraph>
                 Letzte 5 Entscheidungen
               </Paragraph>
@@ -128,13 +143,15 @@ function App() {
                 ))}
             </>
           )}
+          <Spacing/>
+          <Spacing/>
           
           <ReactTooltip 
                 place='bottom'
                 type='light'
                 effect='solid'
                 multiline
-              />
+            />
         </ContentContainer>
     </Container>
   );
