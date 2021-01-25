@@ -8,8 +8,8 @@ type OptionPillProps = {
 
 const Pill = styled.div`
     background-color: white;
-    color: rgb(182,68,242);
-    font-family: 'futura';
+    color: #d97b93;
+    font-family: 'Montserrat';
     text-align: center; 
     padding: 5px 50px; 
     width: max-content;
@@ -28,6 +28,7 @@ const CloseIcon = styled.img`
     cursor: pointer;
     &:hover {
         opacity: 0.5;
+        transform: rotate(90deg);
     } 
 `;
 
