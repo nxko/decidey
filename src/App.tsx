@@ -1,5 +1,5 @@
 import './App.css';
-import React, { MouseEvent, useRef } from 'react';
+import React, { MouseEvent, useEffect, useRef } from 'react';
 import ReactTooltip from 'react-tooltip';
 import DecisionCard from './components/decision-card';
 import OptionPill from './components/option-pill';
@@ -27,8 +27,12 @@ function App() {
   const [decisions, setDecisions] = React.useState<string[]>([]);
   const [latestDecision, setLatestDecision] = React.useState<string>();
   const [isKoModeActive, setIsKoModeActive] = React.useState<boolean>(false);
+  const [last5, setLast5] = React.useState<string[]>([]);
 
-  const last5 = decisions.slice(0, 5);
+  useEffect(()=> {
+    setLast5(decisions.slice(0,5));
+  }, [decisions]);
+
   let inputRef = useRef<HTMLInputElement>(null);
 
   const onFormSubmit = (e: React.FormEvent) => {
