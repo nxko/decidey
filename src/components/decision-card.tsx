@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
 type DecisionCardProps = {
- decision: string, 
+    decision: string, 
 }
 
 const Card = styled.div`
