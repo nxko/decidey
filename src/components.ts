@@ -21,11 +21,21 @@ export const Headline = styled.h1`
   font-size: 80px;
   font-family: 'Montserrat';
   margin-top: 15px; 
+  @media (max-width: 576px) {
+    margin-bottom: 0px;
+  }
 `;
 
 export const Paragraph = styled.p`
   font-family: 'Montserrat'; 
   font-weight: 500;
+  @media (max-width: 576px) {
+    font-size: 10px;
+  }
+`;
+
+export const DecisionParagraph = styled(Paragraph)`
+  margin-bottom: 5px;
 `;
 
 export const ButtonContainer = styled.div`
@@ -55,11 +65,16 @@ export const Button = styled.button`
 export const DecideButton = styled(Button)`
   font-size: 20px;
   padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
   background-color:  #6e529d;
   border: none;
   &:hover {
     background-color: #d97b93;
     color: #ffffff; 
+  }
+  @media (max-width: 576px) {
+    font-size: 17px;
   }
 `;
 
