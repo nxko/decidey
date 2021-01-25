@@ -1,7 +1,9 @@
+import './App.css';
 import React, { MouseEvent, useRef } from 'react';
 import ReactTooltip from 'react-tooltip';
 import DecisionCard from './components/decision-card';
 import OptionPill from './components/option-pill';
+import arrowIcon from './icons/arrow-down-sign-to-navigate.svg';
 import { 
   Headline, 
   Button, 
@@ -15,13 +17,17 @@ import {
   InputField, 
   Paragraph, 
   CardContainer, 
-  Spacing
+  Spacing,
+  DecideButton,
+  DecisionParagraph,
+  Footer
 } from './components';
 
 function App() {
   const [options, setOptions] = React.useState<string[]>([]);
   const [decisions, setDecisions] = React.useState<string[]>([]);
   const [latestDecision, setLatestDecision] = React.useState<string>();
+  const [isKoModeActive, setIsKoModeActive] = React.useState<boolean>(false);
 
   const last5 = decisions.slice(0, 5);
   let inputRef = useRef<HTMLInputElement>(null);
@@ -60,12 +66,19 @@ function App() {
     setLatestDecision('');
     console.log(options);
   }
+  
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setIsKoModeActive(e.currentTarget.checked);
+  }
 
   const makeDecision = () => {
     const randomNum = Math.floor(Math.random() * options.length);
     const option = options[randomNum]; 
     setDecisions([option,...decisions]);
     setLatestDecision(option);
+    if(isKoModeActive) {
+      removeOption(option);
+    }
   };
 
   const tooltipMessage = 'Jede Option kann nur 1x ausgewählt werden.'
@@ -85,7 +98,7 @@ function App() {
           <CheckboxContainer>
             <p data-tip={tooltipMessage}>
               <CheckBoxWrapper>
-                <CheckBox id="checkbox" type="checkbox" />
+                <CheckBox id="checkbox" type="checkbox" onChange={handleCheckboxChange} />
                 <CheckBoxLabel htmlFor="checkbox" />
               </CheckBoxWrapper>
             </p>
@@ -96,28 +109,31 @@ function App() {
         </form>
         <Spacing />
         {options.map((option => (
-          <CardContainer key={option}>
-            <OptionPill option={option} onDeleteClick={removeOption} />
+          <CardContainer key='option'> 
+            <OptionPill option={option} onDeleteClick={removeOption} isActive={latestDecision === option} />
           </CardContainer>
           )))}
         <Spacing />
+        <Spacing />
         {options.length > 0 && (
-        <Button onClick={makeDecision}>Entscheiden</Button>
+        <DecideButton onClick={makeDecision}>Entscheiden</DecideButton>
           )}
         <Spacing />
-        <Spacing />
-        <Paragraph>
-          Entscheidung
-        </Paragraph>
-          
-        {latestDecision && latestDecision !== '' && (
-        <CardContainer>
-          <DecisionCard decision={latestDecision} />
-        </CardContainer>
-          )}
 
         {decisions.length > 0 && (
         <>
+          <DecisionParagraph>
+            Entscheidung
+          </DecisionParagraph>
+              
+          <img src={arrowIcon} height='15px' alt='arrowIcon' />
+          <Spacing />
+
+          {latestDecision && latestDecision !== '' && (
+          <CardContainer>
+            <DecisionCard decision={latestDecision} />
+          </CardContainer>
+              )}
           <Paragraph>
             Letzte 5 Entscheidungen
           </Paragraph>
@@ -128,7 +144,17 @@ function App() {
                 ))}
         </>
           )}
+
+        <Spacing />
+        <Spacing />
+        <Spacing />
+        <Spacing />
           
+        <Footer>
+          Made by Niko Kottre - 2021 &copy; - 
+          {' '}
+          <a href="https://xtheon.com">www.xtheon.com</a>
+        </Footer>
         <ReactTooltip 
           place='bottom'
           type='light'

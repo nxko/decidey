@@ -5,16 +5,18 @@ import xIcon from '../icons/x-mark.svg';
 type OptionPillProps = {
  option: string, 
  onDeleteClick?: (option: string) => void; 
+ isActive?: boolean;
 }
 
 OptionPill.defaultProps = {
     onDeleteClick: undefined,
+    isActive: false,
 }
 
-const Pill = styled.div`
-    background-color: white;
-    color: rgb(182,68,242);
-    font-family: 'futura';
+const Pill = styled.div<{isActive: boolean}>`
+    background-color: ${({isActive}) => isActive ? '#f0ccd4' : '#ffffff'};
+    color: #d97b93;
+    font-family: 'Montserrat';
     text-align: center; 
     padding: 5px 50px; 
     width: max-content;
@@ -33,14 +35,15 @@ const CloseIcon = styled.img`
     cursor: pointer;
     &:hover {
         opacity: 0.5;
+        transform: rotate(90deg);
     } 
 `;
 
 function OptionPill({
-    option, onDeleteClick,
+    option, onDeleteClick, isActive = false,
 }:OptionPillProps) {
 return (
-  <Pill>
+  <Pill isActive={isActive}>
     {option}
     {onDeleteClick && (
     <CloseIcon src={xIcon} alt="delete icon" onClick={() => onDeleteClick(option)} />

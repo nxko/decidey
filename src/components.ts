@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-background: #B644F2;
+background: linear-gradient(to bottom, #6e529d 0%,#d97b93 100%);
   min-height: 100vh;
   min-width: 100vw;
   position: absolute;
@@ -19,12 +19,23 @@ export const ContentContainer = styled.div`
 
 export const Headline = styled.h1`
   font-size: 80px;
-  font-family: 'futura';
+  font-family: 'Montserrat';
   margin-top: 15px; 
+  @media (max-width: 576px) {
+    margin-bottom: 0px;
+  }
 `;
 
 export const Paragraph = styled.p`
-  font-family: 'futura'; 
+  font-family: 'Montserrat'; 
+  font-weight: 500;
+  @media (max-width: 576px) {
+    font-size: 10px;
+  }
+`;
+
+export const DecisionParagraph = styled(Paragraph)`
+  margin-bottom: 5px;
 `;
 
 export const ButtonContainer = styled.div`
@@ -36,18 +47,34 @@ export const Button = styled.button`
   border: 1px solid white;
   padding: 8px;
   color: white;
-  font-family: 'futura';
+  font-family: 'Montserrat';
   margin-left: 4.5px;
   margin-right: 4.5px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   border-radius: 25px;
   &:hover {
-    color: #B644F2;
+    color: #6e529d;
     background-color: white; 
   }
   &:focus{
     outline: none;
+  }
+`;
+
+export const DecideButton = styled(Button)`
+  font-size: 20px;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color:  #6e529d;
+  border: none;
+  &:hover {
+    background-color: #d97b93;
+    color: #ffffff; 
+  }
+  @media (max-width: 576px) {
+    font-size: 17px;
   }
 `;
 
@@ -58,8 +85,8 @@ export const InputField = styled.input`
   width: 250px; 
   padding-left: 15px;
   padding-right: 15px;
-  font-family: 'futura';
-  color:  #B644F2;
+  font-family: 'Montserrat';
+  color:  #6e529d;
   &:focus{
     outline: none;
   }
@@ -86,7 +113,7 @@ export const CheckBoxLabel = styled.label`
   width: 42px;
   height: 26px;
   border-radius: 15px;
-  background: #c07de3;
+  background: #6e529d;
   cursor: pointer;
   &::after {
     content: "";
@@ -107,7 +134,7 @@ export const CheckBox = styled.input`
   width: 42px;
   height: 26px;
   &:checked + ${CheckBoxLabel} {
-    background: #f896ff;
+    background: #d97b93;
     &::after {
       content: "";
       display: block;
@@ -123,4 +150,17 @@ export const CheckBox = styled.input`
 export const Spacing = styled.div`
     padding-top: 5px;
     padding-bottom: 5px;
+`;
+
+export const Footer = styled.div`
+  position: absolute;
+  bottom: 5px; 
+  left: 0;
+  width: 100vw;
+  font-family: 'Montserrat';
+  font-size: 10px;
+  opacity: 0.5;
+  a {
+    color: #ffffff;
+  }
 `;

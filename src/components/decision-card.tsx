@@ -3,19 +3,23 @@ import styled from "styled-components";
 
 
 type DecisionCardProps = {
- decision: string, 
+    decision: string, 
 }
 
 const Card = styled.div`
     background-color: white;
-    color: rgb(182,68,242);
-    font-family: 'futura';
+    color: #d97b93;
+    font-family: 'Montserrat';
     font-weight: 800; 
     text-align: center; 
     padding: 20px 90px; 
     width: max-content;
     border-radius: 15px;
     font-size: 30px; 
+    @media (max-width: 576px) {
+        font-size: 25px;
+        padding: 15px 85px;
+    }
 `;
 
 function DecisionCard({decision}:DecisionCardProps) {
