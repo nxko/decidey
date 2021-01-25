@@ -1,3 +1,4 @@
+import './App.css';
 import React, { MouseEvent, useRef } from 'react';
 import ReactTooltip from 'react-tooltip';
 import DecisionCard from './components/decision-card';
