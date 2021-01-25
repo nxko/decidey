@@ -16,7 +16,8 @@ import {
   InputField, 
   Paragraph, 
   CardContainer, 
-  Spacing
+  Spacing,
+  DecideButton
 } from './components';
 
 function App() {
@@ -110,8 +111,9 @@ function App() {
             </CardContainer>
           )))}
           <Spacing/>
+          <Spacing/>
           {options.length > 0 && (
-            <Button onClick={makeDecision}>Entscheiden</Button>
+            <DecideButton onClick={makeDecision}>Entscheiden</DecideButton>
           )}
           <Spacing/>
           <Spacing/>

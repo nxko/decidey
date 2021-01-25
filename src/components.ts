@@ -52,6 +52,17 @@ export const Button = styled.button`
   }
 `;
 
+export const DecideButton = styled(Button)`
+  font-size: 20px;
+  padding: 10px;
+  background-color:  #6e529d;
+  border: none;
+  &:hover {
+    background-color: #d97b93;
+    color: #ffffff; 
+  }
+`;
+
 export const InputField = styled.input`
   border: none; 
   border-radius: 20px;
