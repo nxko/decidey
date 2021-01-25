@@ -118,19 +118,21 @@ function App() {
             <DecideButton onClick={makeDecision}>Entscheiden</DecideButton>
           )}
           <Spacing/>
-          <DecisionParagraph>
-            Entscheidung
-          </DecisionParagraph>
-          <img src={arrowIcon} height='15px'/>
-          <Spacing/>
-          {latestDecision && latestDecision !== '' && (
-            <CardContainer>
-              <DecisionCard decision={latestDecision}/>
-            </CardContainer>
-          )}
 
           {decisions.length > 0 && (
             <>
+              <DecisionParagraph>
+                Entscheidung
+              </DecisionParagraph>
+              
+              <img src={arrowIcon} height='15px'/>
+              <Spacing/>
+
+              {latestDecision && latestDecision !== '' && (
+                <CardContainer>
+                  <DecisionCard decision={latestDecision}/>
+                </CardContainer>
+              )}
               <Paragraph>
                 Letzte 5 Entscheidungen
               </Paragraph>
