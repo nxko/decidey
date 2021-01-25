@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
 background: linear-gradient(to bottom, #6e529d 0%,#d97b93 100%);
