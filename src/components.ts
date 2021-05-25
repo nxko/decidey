@@ -164,3 +164,12 @@ export const Footer = styled.div`
     color: #ffffff;
   }
 `;
+
+export const Logo = styled.img`
+  width: 70%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+`;

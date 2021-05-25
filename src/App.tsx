@@ -4,6 +4,7 @@ import ReactTooltip from 'react-tooltip';
 import DecisionCard from './components/decision-card';
 import OptionPill from './components/option-pill';
 import arrowIcon from './icons/arrow-down-sign-to-navigate.svg';
+import logoSrc from './icons/decidey-logo.png';
 import { 
   Headline, 
   Button, 
@@ -20,7 +21,8 @@ import {
   Spacing,
   DecideButton,
   DecisionParagraph,
-  Footer
+  Footer,
+  Logo
 } from './components';
 
 function App() {
@@ -90,7 +92,8 @@ function App() {
   return (
     <Container>
       <ContentContainer>
-        <Headline>Decidey</Headline>
+        {/* <Headline>Decidey</Headline> */}
+        <Logo src={logoSrc} width='70%'/>
         <Paragraph>Optionen eingeben</Paragraph>
         <form onSubmit={onFormSubmit}>
           <InputField type="text" ref={inputRef} />
