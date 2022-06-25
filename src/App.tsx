@@ -6,7 +6,6 @@ import OptionPill from './components/option-pill';
 import arrowIcon from './icons/arrow-down-sign-to-navigate.svg';
 import logoSrc from './icons/decidey-logo.png';
 import { 
-  Headline, 
   Button, 
   ButtonContainer, 
   CheckBox, 
@@ -24,6 +23,8 @@ import {
   Footer,
   Logo
 } from './components';
+import FileImport from './components/file-import';
+import Modal from './components/modal';
 
 function App() {
   const [options, setOptions] = React.useState<string[]>([]);
@@ -31,6 +32,7 @@ function App() {
   const [latestDecision, setLatestDecision] = React.useState<string>();
   const [isKoModeActive, setIsKoModeActive] = React.useState<boolean>(false);
   const [last5, setLast5] = React.useState<string[]>([]);
+  const [isOpen, setIsOpen] = React.useState<boolean>(false);
 
   useEffect(()=> {
     setLast5(decisions.slice(0,5));
@@ -70,7 +72,6 @@ function App() {
     setOptions([]);
     setDecisions([]);
     setLatestDecision('');
-    console.log(options);
   }
   
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -92,7 +93,6 @@ function App() {
   return (
     <Container>
       <ContentContainer>
-        {/* <Headline>Decidey</Headline> */}
         <Logo src={logoSrc} width='70%'/>
         <Paragraph>Optionen eingeben</Paragraph>
         <form onSubmit={onFormSubmit}>
@@ -103,23 +103,23 @@ function App() {
             <Button onClick={resetOptions}>Zurücksetzen</Button>
           </ButtonContainer>
           <CheckboxContainer>
-            <p data-tip={tooltipMessage}>
+            <span data-tip={tooltipMessage}>
               <CheckBoxWrapper>
                 <CheckBox id="checkbox" type="checkbox" onChange={handleCheckboxChange} />
                 <CheckBoxLabel htmlFor="checkbox" />
               </CheckBoxWrapper>
-            </p>
+            </span>
             <Paragraph>
               KO-Mode
             </Paragraph>
           </CheckboxContainer>
         </form>
         <Spacing />
-        {options.map((option => (
-          <CardContainer key='option'> 
+        {options.map((option, index) => (
+          <CardContainer key={`option-${option}-${index}`}> 
             <OptionPill option={option} onDeleteClick={removeOption} isActive={latestDecision === option} />
           </CardContainer>
-          )))}
+          ))}
         <Spacing />
         <Spacing />
         {options.length > 0 && (
@@ -169,6 +169,14 @@ function App() {
           multiline
         />
       </ContentContainer>
+      <Button onClick={() => { setIsOpen(true) }}>Optionen laden</Button>
+      <Modal 
+        isOpen={isOpen} 
+        closeModal={() => { setIsOpen(false); }} 
+        content={      
+          <FileImport onFileImport={(loadedOptions: string[]) => { setOptions([...options, ...loadedOptions]); setIsOpen(false); }} />
+        }
+      />
     </Container>
   );
 }

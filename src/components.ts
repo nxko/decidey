@@ -42,11 +42,11 @@ export const ButtonContainer = styled.div`
   margin-top: 16px;
 `;
 
-export const Button = styled.button`
+export const Button = styled.button<{secondary?: boolean}>`
   background-color: transparent;
-  border: 1px solid white;
+  border: ${({secondary}) => secondary ? '#676767' : 'white'} 1px solid ;
   padding: 8px;
-  color: white;
+  color: ${({secondary}) => secondary ? '#676767' : 'white'};
   font-family: 'Montserrat';
   margin-left: 4.5px;
   margin-right: 4.5px;
@@ -54,8 +54,8 @@ export const Button = styled.button`
   transition: all 0.2s ease-in-out;
   border-radius: 25px;
   &:hover {
-    color: #6e529d;
-    background-color: white; 
+    color: ${({secondary}) => secondary ? 'white' : '#6e529d'};
+    background-color: ${({secondary}) => secondary ? '#676767' : 'white'}; 
   }
   &:focus{
     outline: none;
