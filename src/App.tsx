@@ -5,6 +5,7 @@ import DecisionCard from './components/decision-card';
 import OptionPill from './components/option-pill';
 import arrowIcon from './icons/arrow-down-sign-to-navigate.svg';
 import logoSrc from './icons/decidey-logo.png';
+import importIcon from './icons/import.svg';
 import { 
   Button, 
   ButtonContainer, 
@@ -21,7 +22,9 @@ import {
   DecideButton,
   DecisionParagraph,
   Footer,
-  Logo
+  Logo,
+  ImportButton,
+  UploadIcon
 } from './components';
 import FileImport from './components/file-import';
 import Modal from './components/modal';
@@ -93,6 +96,7 @@ function App() {
   return (
     <Container>
       <ContentContainer>
+        <ImportButton onClick={() => { setIsOpen(true) }}><img src={importIcon} height='auto' alt='importIcon' /></ImportButton>
         <Logo src={logoSrc} width='70%'/>
         <Paragraph>Optionen eingeben</Paragraph>
         <form onSubmit={onFormSubmit}>
@@ -169,7 +173,6 @@ function App() {
           multiline
         />
       </ContentContainer>
-      <Button onClick={() => { setIsOpen(true) }}>Optionen laden</Button>
       <Modal 
         isOpen={isOpen} 
         closeModal={() => { setIsOpen(false); }} 

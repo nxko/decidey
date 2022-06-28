@@ -9,17 +9,26 @@ const FormWrapper = styled.div`
 `;
 
 const Text = styled.h2`
-    color: #676767;
+    color: #6e529d;
 `;
 
 const Paragraph = styled.p`
-    color: #676767;
+    color: #6e529d;
 `;
 const ErrorText = styled.p`
     color: #de3442;
     font-size: 12px;
     margin: 8px;
 `;
+
+const ImportButton = styled(Button)`
+    background-color: #6e529d;
+    color: white;
+    &:hover {
+        border: 1px solid #6e529d;
+    }
+`;
+
 
 type Props = {
     onFileImport: (file: string[]) => void ;
@@ -54,7 +63,7 @@ const FileImport = ({ onFileImport }: Props) => {
             <input style={{display: 'none'}} type="file" accept=".json" ref={fileInput} onChange={(e) => {setFileName(e.target?.files?.[0]?.name ?? "")}} onInput={() => {console.log('onInput')}} />
             <Paragraph>{fileName === "" ? 'Keine Datei ausgewählt' : fileName}</Paragraph>
             <Button secondary onClick={() => {setError(""); fileInput.current?.click();}}>Datei auswählen</Button>
-            <Button style={{ marginTop: 8 }} secondary onClick={() => { fileInput.current?.files?.[0] ? handleLoadJson(fileInput.current?.files?.[0]) : setError('Wähle eine Datei aus, um sie dann zu importieren.')}}>Importieren</Button>
+            <ImportButton style={{ marginTop: 8 }} onClick={() => { fileInput.current?.files?.[0] ? handleLoadJson(fileInput.current?.files?.[0]) : setError('Wähle eine Datei aus, um sie dann zu importieren.')}}>Importieren</ImportButton>
             <ErrorText>{error}</ErrorText>
         </FormWrapper>
     )

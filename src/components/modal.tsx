@@ -17,13 +17,13 @@ const ContentContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffffee;
+    background-color: #ffffff;
     border-radius: 16px;
     ${breakpoints.xs`
-        inset: 50vh 0 0 0;
+        inset: 60vh 0 0 0;
     `}
     ${breakpoints.md`
-        inset: 20vh 20vw; 
+        inset: 35vh 20vw; 
     `}
 `
 

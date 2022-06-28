@@ -44,9 +44,9 @@ export const ButtonContainer = styled.div`
 
 export const Button = styled.button<{secondary?: boolean}>`
   background-color: transparent;
-  border: ${({secondary}) => secondary ? '#676767' : 'white'} 1px solid ;
+  border: ${({secondary}) => secondary ? '#6e529d' : 'white'} 1px solid ;
   padding: 8px;
-  color: ${({secondary}) => secondary ? '#676767' : 'white'};
+  color: ${({secondary}) => secondary ? '#6e529d' : 'white'};
   font-family: 'Montserrat';
   margin-left: 4.5px;
   margin-right: 4.5px;
@@ -55,7 +55,7 @@ export const Button = styled.button<{secondary?: boolean}>`
   border-radius: 25px;
   &:hover {
     color: ${({secondary}) => secondary ? 'white' : '#6e529d'};
-    background-color: ${({secondary}) => secondary ? '#676767' : 'white'}; 
+    background-color: ${({secondary}) => secondary ? '#6e529d' : 'white'}; 
   }
   &:focus{
     outline: none;
@@ -75,6 +75,20 @@ export const DecideButton = styled(Button)`
   }
   @media (max-width: 576px) {
     font-size: 17px;
+  }
+`;
+
+export const ImportButton = styled(Button)`
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  height: 34px;
+  width: 34px;
+  border-radius: 50px;
+  opacity:0.4;
+  &:hover {
+    background-color: unset;
+    opacity: 0.2;
   }
 `;
 
@@ -101,6 +115,7 @@ export const CheckboxContainer = styled.div`
   display: inline-flex; 
   justify-content: center;
   align-items: center; 
+  margin-top: 5px;
 `;
 
 export const CheckBoxWrapper = styled.div`
@@ -167,6 +182,16 @@ export const Footer = styled.div`
 
 export const Logo = styled.img`
   width: 70%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+`;
+
+export const UploadIcon = styled.img`
+  height: 25px;
+  width: 25px;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
