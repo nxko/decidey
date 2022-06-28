@@ -1,25 +1,26 @@
 {
   "files": {
     "main.css": "/decidey/static/css/main.bb37f9f7.chunk.css",
-    "main.js": "/decidey/static/js/main.d839a009.chunk.js",
-    "main.js.map": "/decidey/static/js/main.d839a009.chunk.js.map",
+    "main.js": "/decidey/static/js/main.c2ec82b7.chunk.js",
+    "main.js.map": "/decidey/static/js/main.c2ec82b7.chunk.js.map",
     "runtime-main.js": "/decidey/static/js/runtime-main.6856344a.js",
     "runtime-main.js.map": "/decidey/static/js/runtime-main.6856344a.js.map",
-    "static/js/2.bcf4f1f3.chunk.js": "/decidey/static/js/2.bcf4f1f3.chunk.js",
-    "static/js/2.bcf4f1f3.chunk.js.map": "/decidey/static/js/2.bcf4f1f3.chunk.js.map",
+    "static/js/2.5d2f169a.chunk.js": "/decidey/static/js/2.5d2f169a.chunk.js",
+    "static/js/2.5d2f169a.chunk.js.map": "/decidey/static/js/2.5d2f169a.chunk.js.map",
     "static/js/3.8474e879.chunk.js": "/decidey/static/js/3.8474e879.chunk.js",
     "static/js/3.8474e879.chunk.js.map": "/decidey/static/js/3.8474e879.chunk.js.map",
     "index.html": "/decidey/index.html",
     "static/css/main.bb37f9f7.chunk.css.map": "/decidey/static/css/main.bb37f9f7.chunk.css.map",
-    "static/js/2.bcf4f1f3.chunk.js.LICENSE.txt": "/decidey/static/js/2.bcf4f1f3.chunk.js.LICENSE.txt",
+    "static/js/2.5d2f169a.chunk.js.LICENSE.txt": "/decidey/static/js/2.5d2f169a.chunk.js.LICENSE.txt",
     "static/media/arrow-down-sign-to-navigate.e4ed3c68.svg": "/decidey/static/media/arrow-down-sign-to-navigate.e4ed3c68.svg",
     "static/media/decidey-logo.47207b3d.png": "/decidey/static/media/decidey-logo.47207b3d.png",
+    "static/media/import.3f6ba3be.svg": "/decidey/static/media/import.3f6ba3be.svg",
     "static/media/x-mark.6ce40db1.svg": "/decidey/static/media/x-mark.6ce40db1.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.6856344a.js",
-    "static/js/2.bcf4f1f3.chunk.js",
+    "static/js/2.5d2f169a.chunk.js",
     "static/css/main.bb37f9f7.chunk.css",
-    "static/js/main.d839a009.chunk.js"
+    "static/js/main.c2ec82b7.chunk.js"
   ]
 }
