@@ -162,11 +162,7 @@ function App() {
         <Spacing />
         <Spacing />
           
-        <Footer>
-          Made by kuttermedia | xtheon - 2021 &copy; - 
-          {' '}
-          <a href="https://kuttermedia.de">www.kuttermedia.de</a> | <a href="https://xtheon.com">www.xtheon.com</a>
-        </Footer>
+
         <ReactTooltip 
           place='bottom'
           type='light'
