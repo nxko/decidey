@@ -5,6 +5,7 @@ import DecisionCard from './components/decision-card';
 import OptionPill from './components/option-pill';
 import arrowIcon from './icons/arrow-down-sign-to-navigate.svg';
 import logoSrc from './icons/decidey-logo.png';
+import kuttermediaLogoSrc from './icons/kuttermedia_logo-quad-white.png';
 import importIcon from './icons/import.svg';
 import { 
   Button, 
@@ -24,7 +25,8 @@ import {
   Footer,
   Logo,
   ImportButton,
-  UploadIcon
+  UploadIcon,
+  KuttermediaLogo
 } from './components';
 import FileImport from './components/file-import';
 import Modal from './components/modal';
@@ -96,7 +98,6 @@ function App() {
   return (
     <Container>
       <ContentContainer>
-        <ImportButton onClick={() => { setIsOpen(true) }}><img src={importIcon} height='auto' alt='importIcon' /></ImportButton>
         <Logo src={logoSrc} width='70%'/>
         <Paragraph>Optionen eingeben</Paragraph>
         <form onSubmit={onFormSubmit}>
@@ -162,9 +163,9 @@ function App() {
         <Spacing />
           
         <Footer>
-          Made by Niko Kottre - 2021 &copy; - 
+          Made by kuttermedia | xtheon - 2021 &copy; - 
           {' '}
-          <a href="https://xtheon.com">www.xtheon.com</a>
+          <a href="https://kuttermedia.de">www.kuttermedia.de</a> | <a href="https://xtheon.com">www.xtheon.com</a>
         </Footer>
         <ReactTooltip 
           place='bottom'
@@ -172,6 +173,8 @@ function App() {
           effect='solid'
           multiline
         />
+        <ImportButton onClick={() => { setIsOpen(true) }}><img src={importIcon} height='auto' alt='importIcon' /></ImportButton>
+        <a href="https://kuttermedia.de"><KuttermediaLogo src={kuttermediaLogoSrc}/></a>
       </ContentContainer>
       <Modal 
         isOpen={isOpen} 

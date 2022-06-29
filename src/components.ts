@@ -88,7 +88,7 @@ export const ImportButton = styled(Button)`
   opacity:0.4;
   &:hover {
     background-color: unset;
-    opacity: 0.2;
+    opacity: 1;
   }
 `;
 
@@ -197,4 +197,17 @@ export const UploadIcon = styled.img`
   margin-right: auto;
   margin-top: 25px;
   margin-bottom: 25px;
+`;
+
+export const KuttermediaLogo = styled.img`
+  height: 65px;
+  width: 65px;
+  position: absolute; 
+  bottom: 0px;
+  left: 10px;
+  opacity: 0.4;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    opacity: 1;
+  }
 `;
