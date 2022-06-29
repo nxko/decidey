@@ -128,8 +128,8 @@ function App() {
         <Spacing />
         <Spacing />
         {options.length > 0 && (
-        <DecideButton onClick={makeDecision}>Entscheiden</DecideButton>
-          )}
+          <DecideButton onClick={makeDecision}>Entscheiden</DecideButton>
+        )}
         <Spacing />
 
         {decisions.length > 0 && (
