@@ -215,7 +215,7 @@ export const KuttermediaLogo = styled.img`
   border-radius: 65px;
   transition: all 0.2s ease-in-out;
   background-color: black;
-  border: #ffe400 3px solid;
+  border: #ffe400 2px solid;
   &:hover {
     opacity: 0.5;
   }
