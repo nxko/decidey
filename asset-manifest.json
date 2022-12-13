@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/decidey/static/css/main.bb37f9f7.chunk.css",
-    "main.js": "/decidey/static/js/main.fe07329e.chunk.js",
-    "main.js.map": "/decidey/static/js/main.fe07329e.chunk.js.map",
+    "main.js": "/decidey/static/js/main.47dbd0d4.chunk.js",
+    "main.js.map": "/decidey/static/js/main.47dbd0d4.chunk.js.map",
     "runtime-main.js": "/decidey/static/js/runtime-main.6856344a.js",
     "runtime-main.js.map": "/decidey/static/js/runtime-main.6856344a.js.map",
     "static/js/2.5d2f169a.chunk.js": "/decidey/static/js/2.5d2f169a.chunk.js",
@@ -22,6 +22,6 @@
     "static/js/runtime-main.6856344a.js",
     "static/js/2.5d2f169a.chunk.js",
     "static/css/main.bb37f9f7.chunk.css",
-    "static/js/main.fe07329e.chunk.js"
+    "static/js/main.47dbd0d4.chunk.js"
   ]
 }
