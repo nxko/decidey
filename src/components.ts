@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-background: linear-gradient(to bottom, #6e529d 0%,#d97b93 100%);
+ //background: linear-gradient(to bottom, #6e529d 0%,#d97b93 100%);
+ background: #fff;
   min-height: 100vh;
   min-width: 100vw;
   position: absolute;
@@ -28,7 +29,9 @@ export const Headline = styled.h1`
 
 export const Paragraph = styled.p`
   font-family: 'Montserrat'; 
-  font-weight: 500;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #000;
   @media (max-width: 576px) {
     font-size: 10px;
   }
@@ -43,19 +46,20 @@ export const ButtonContainer = styled.div`
 `;
 
 export const Button = styled.button<{secondary?: boolean}>`
-  background-color: transparent;
-  border: ${({secondary}) => secondary ? '#6e529d' : 'white'} 1px solid ;
+  background-color: ${({secondary}) => secondary ? 'transparent' : '#ffe400'};
+  border: #ffe400 2px solid;
   padding: 8px;
-  color: ${({secondary}) => secondary ? '#6e529d' : 'white'};
+  color: black;
   font-family: 'Montserrat';
+  font-weight: 800;
+  text-transform: uppercase;
   margin-left: 4.5px;
   margin-right: 4.5px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   border-radius: 25px;
   &:hover {
-    color: ${({secondary}) => secondary ? 'white' : '#6e529d'};
-    background-color: ${({secondary}) => secondary ? '#6e529d' : 'white'}; 
+    background-color: ${({secondary}) => secondary ? '#ffe400' : 'transparent'}; 
   }
   &:focus{
     outline: none;
@@ -67,10 +71,10 @@ export const DecideButton = styled(Button)`
   padding: 10px;
   padding-left: 15px;
   padding-right: 15px;
-  background-color:  #6e529d;
+  background-color:  #ffe400;
   border: none;
   &:hover {
-    background-color: #d97b93;
+    background-color: #f6f6f6;
     color: #ffffff; 
   }
   @media (max-width: 576px) {
@@ -82,25 +86,27 @@ export const ImportButton = styled(Button)`
   position: absolute;
   bottom: 15px;
   right: 15px;
-  height: 34px;
-  width: 34px;
+  height: 50px;
+  width: 50px;
   border-radius: 50px;
-  opacity:0.4;
+  opacity:1;
+  background-color: black;
   &:hover {
-    background-color: unset;
-    opacity: 1;
+    background-color: black; ;
+    opacity: 0.5;
   }
 `;
 
 export const InputField = styled.input`
   border: none; 
   border-radius: 20px;
+  background-color: #f6f6f6;
   height: 30px;
   width: 250px; 
   padding-left: 15px;
   padding-right: 15px;
   font-family: 'Montserrat';
-  color:  #6e529d;
+  color: black;
   &:focus{
     outline: none;
   }
@@ -128,7 +134,7 @@ export const CheckBoxLabel = styled.label`
   width: 42px;
   height: 26px;
   border-radius: 15px;
-  background: #6e529d;
+  background: black;
   cursor: pointer;
   &::after {
     content: "";
@@ -149,7 +155,7 @@ export const CheckBox = styled.input`
   width: 42px;
   height: 26px;
   &:checked + ${CheckBoxLabel} {
-    background: #d97b93;
+    background: #ffe400;
     &::after {
       content: "";
       display: block;
@@ -200,14 +206,17 @@ export const UploadIcon = styled.img`
 `;
 
 export const KuttermediaLogo = styled.img`
-  height: 65px;
-  width: 65px;
+  height: 50px;
+  width: 50px;
   position: absolute; 
-  bottom: 0px;
-  left: 10px;
-  opacity: 0.4;
+  bottom: 15px;
+  left: 15px;
+  opacity: 1;
+  border-radius: 65px;
   transition: all 0.2s ease-in-out;
+  background-color: black;
+  border: #ffe400 3px solid;
   &:hover {
-    opacity: 1;
+    opacity: 0.5;
   }
 `;

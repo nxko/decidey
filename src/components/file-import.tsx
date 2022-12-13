@@ -9,11 +9,11 @@ const FormWrapper = styled.div`
 `;
 
 const Text = styled.h2`
-    color: #6e529d;
+    color: black;
 `;
 
 const Paragraph = styled.p`
-    color: #6e529d;
+    color: black;
 `;
 const ErrorText = styled.p`
     color: #de3442;
@@ -22,10 +22,10 @@ const ErrorText = styled.p`
 `;
 
 const ImportButton = styled(Button)`
-    background-color: #6e529d;
-    color: white;
+    background-color: #ffe400;
+    color: black;
     &:hover {
-        border: 1px solid #6e529d;
+        border: 2px solid #ffe400;
     }
 `;
 

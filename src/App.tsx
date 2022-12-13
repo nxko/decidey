@@ -4,7 +4,7 @@ import ReactTooltip from 'react-tooltip';
 import DecisionCard from './components/decision-card';
 import OptionPill from './components/option-pill';
 import arrowIcon from './icons/arrow-down-sign-to-navigate.svg';
-import logoSrc from './icons/decidey-logo.png';
+import logoSrc from './icons/decidey-logo-v2.2-yellow.png';
 import kuttermediaLogoSrc from './icons/kuttermedia_logo-quad-white.png';
 import importIcon from './icons/import.svg';
 import { 
@@ -105,7 +105,7 @@ function App() {
           <Spacing />
           <ButtonContainer>
             <Button type='submit'>Hinzufügen</Button>
-            <Button onClick={resetOptions}>Zurücksetzen</Button>
+            <Button secondary onClick={resetOptions}>Zurücksetzen</Button>
           </ButtonContainer>
           <CheckboxContainer>
             <span data-tip={tooltipMessage}>

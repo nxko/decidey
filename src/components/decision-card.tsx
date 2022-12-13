@@ -7,8 +7,8 @@ type DecisionCardProps = {
 }
 
 const Card = styled.div`
-    background-color: white;
-    color: #d97b93;
+    background-color: #000;
+    color: #fff;
     font-family: 'Montserrat';
     font-weight: 800; 
     text-align: center; 
@@ -18,6 +18,7 @@ const Card = styled.div`
     font-size: 30px; 
     max-width: 250px; 
     word-wrap: break-word;
+    border: #ffe400 5px solid;
     @media (max-width: 576px) {
       width: 250px;  
       font-size: 25px;

@@ -14,8 +14,8 @@ OptionPill.defaultProps = {
 }
 
 const Pill = styled.div<{isActive: boolean}>`
-    background-color: ${({isActive}) => isActive ? '#f0ccd4' : '#ffffff'};
-    color: #d97b93;
+    background-color: ${({isActive}) => isActive ? '#636363' : 'black'};
+    color: white;
     font-family: 'Montserrat';
     text-align: center; 
     padding: 5px 50px; 
