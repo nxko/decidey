@@ -11,7 +11,8 @@
 - **User-Friendly**: Easy to use, no registration required.
 - **Customizable**: Enter your own options and let Decidey choose.
 - **Multiple Options**: Supports as many choices as you need.
-- **KO-Mode**: Removes option after choice
+- **KO-Mode**: Removes option after choice.
+- **JSON-Import**: Import options via JSON.
 
 ## How It Works
 
