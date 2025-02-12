@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import styled from "styled-components";
 import { array, string } from 'yup'
 import { Button } from "../components";
+import { useTranslation } from 'react-i18next';
 
 const FormWrapper = styled.div`
     display: flex;
@@ -40,6 +41,7 @@ const FileImport = ({ onFileImport }: Props) => {
     const fileInput = useRef<HTMLInputElement | null>(null); 
     const [error, setError] = useState("");
     const [fileName, setFileName] = useState("");
+    const {t} = useTranslation();
 
     const handleLoadJson = (file?: File) => {
         if (!file) {
@@ -53,17 +55,17 @@ const FileImport = ({ onFileImport }: Props) => {
                 const result = await schema.validate(JSON.parse(e?.target?.result as string));
                 onFileImport(result);
             } catch (error) {
-                setError("Die importierte JSON-Datei ist nicht valide. Bitte lade eine JSON mit einem Array von Strings hoch.");
+                setError(t("jsonError"));
             }
         };
     }
     return (
         <FormWrapper>
-            <Text>Importiere deine Optionen als JSON-Datei</Text>
+            <Text>{t("jsonImportTitle")}</Text>
             <input style={{display: 'none'}} type="file" accept=".json" ref={fileInput} onChange={(e) => {setFileName(e.target?.files?.[0]?.name ?? "")}} onInput={() => {console.log('onInput')}} />
-            <Paragraph>{fileName === "" ? 'Keine Datei ausgewählt' : fileName}</Paragraph>
-            <Button secondary onClick={() => {setError(""); fileInput.current?.click();}}>Datei auswählen</Button>
-            <ImportButton style={{ marginTop: 8 }} onClick={() => { fileInput.current?.files?.[0] ? handleLoadJson(fileInput.current?.files?.[0]) : setError('Wähle eine Datei aus, um sie dann zu importieren.')}}>Importieren</ImportButton>
+            <Paragraph>{fileName === "" ? t("noFileSelected") : fileName}</Paragraph>
+            <Button secondary onClick={() => {setError(""); fileInput.current?.click();}}>{t("selectFile")}</Button>
+            <ImportButton style={{ marginTop: 8 }} onClick={() => { fileInput.current?.files?.[0] ? handleLoadJson(fileInput.current?.files?.[0]) : setError(t("selectFileLong"))}}>{t("import")}</ImportButton>
             <ErrorText>{error}</ErrorText>
         </FormWrapper>
     )
