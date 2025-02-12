@@ -37,10 +37,7 @@ If you want to run Decidey locally, follow these steps:
 `npm start`
 
 ## Screenshots
-<img src="https://github.com/user-attachments/assets/94cc3fae-029b-4671-a793-d95ed21a3715" alt="IMG_1563" width="200" />
-<img src="https://github.com/user-attachments/assets/8578c7e2-b961-4d45-8d2d-752cfd19c331" width="200" />
-
-
+<img src="https://github.com/user-attachments/assets/9a1a9ba4-6b70-472b-b190-964678f6c8f2" alt="screenshot-decidey" width="1000" />
 
 ## Technology Stack 
 - HTML, CSS, TypeScript, REACT
