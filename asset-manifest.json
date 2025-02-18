@@ -1,27 +1,19 @@
 {
   "files": {
-    "main.css": "/decidey/static/css/main.bb37f9f7.chunk.css",
-    "main.js": "/decidey/static/js/main.47dbd0d4.chunk.js",
-    "main.js.map": "/decidey/static/js/main.47dbd0d4.chunk.js.map",
-    "runtime-main.js": "/decidey/static/js/runtime-main.6856344a.js",
-    "runtime-main.js.map": "/decidey/static/js/runtime-main.6856344a.js.map",
-    "static/js/2.5d2f169a.chunk.js": "/decidey/static/js/2.5d2f169a.chunk.js",
-    "static/js/2.5d2f169a.chunk.js.map": "/decidey/static/js/2.5d2f169a.chunk.js.map",
-    "static/js/3.8474e879.chunk.js": "/decidey/static/js/3.8474e879.chunk.js",
-    "static/js/3.8474e879.chunk.js.map": "/decidey/static/js/3.8474e879.chunk.js.map",
+    "main.css": "/decidey/static/css/main.4dcc0b08.css",
+    "main.js": "/decidey/static/js/main.77e1d1e1.js",
+    "static/js/422.c5e0f727.chunk.js": "/decidey/static/js/422.c5e0f727.chunk.js",
+    "static/media/decidey-logo-v2.2-yellow.png": "/decidey/static/media/decidey-logo-v2.2-yellow.46a9709192cb7f63fa03.png",
+    "static/media/import.svg": "/decidey/static/media/import.3f6ba3bed5e78b517f63ff276f3fad53.svg",
+    "static/media/x-mark.svg": "/decidey/static/media/x-mark.236ddcda50703ed52f65a4bfcc5cc812.svg",
+    "static/media/arrow-down-sign-to-navigate.svg": "/decidey/static/media/arrow-down-sign-to-navigate.66820cbb19d4790f88b389d2ee96cb0d.svg",
     "index.html": "/decidey/index.html",
-    "static/css/main.bb37f9f7.chunk.css.map": "/decidey/static/css/main.bb37f9f7.chunk.css.map",
-    "static/js/2.5d2f169a.chunk.js.LICENSE.txt": "/decidey/static/js/2.5d2f169a.chunk.js.LICENSE.txt",
-    "static/media/arrow-down-sign-to-navigate.e4ed3c68.svg": "/decidey/static/media/arrow-down-sign-to-navigate.e4ed3c68.svg",
-    "static/media/decidey-logo-v2.2-yellow.46a97091.png": "/decidey/static/media/decidey-logo-v2.2-yellow.46a97091.png",
-    "static/media/import.3f6ba3be.svg": "/decidey/static/media/import.3f6ba3be.svg",
-    "static/media/kuttermedia_logo-quad-white.0dfacf1c.png": "/decidey/static/media/kuttermedia_logo-quad-white.0dfacf1c.png",
-    "static/media/x-mark.4fc9d5b4.svg": "/decidey/static/media/x-mark.4fc9d5b4.svg"
+    "main.4dcc0b08.css.map": "/decidey/static/css/main.4dcc0b08.css.map",
+    "main.77e1d1e1.js.map": "/decidey/static/js/main.77e1d1e1.js.map",
+    "422.c5e0f727.chunk.js.map": "/decidey/static/js/422.c5e0f727.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.6856344a.js",
-    "static/js/2.5d2f169a.chunk.js",
-    "static/css/main.bb37f9f7.chunk.css",
-    "static/js/main.47dbd0d4.chunk.js"
+    "static/css/main.4dcc0b08.css",
+    "static/js/main.77e1d1e1.js"
   ]
 }
