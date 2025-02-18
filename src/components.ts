@@ -97,6 +97,23 @@ export const ImportButton = styled(Button)`
   }
 `;
 
+export const LanguageButton = styled(Button)`
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  opacity:1;
+  background-color: black;
+  color: white;
+  font-size: 18px;
+  &:hover {
+    background-color: black; ;
+    opacity: 0.5;
+  }
+`;
+
 export const InputField = styled.input`
   border: none; 
   border-radius: 20px;

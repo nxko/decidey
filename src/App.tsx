@@ -26,10 +26,13 @@ import {
   Logo,
   ImportButton,
   UploadIcon,
-  KuttermediaLogo
+  KuttermediaLogo,
+  LanguageButton
 } from './components';
 import FileImport from './components/file-import';
 import Modal from './components/modal';
+import './i18n';
+import { useTranslation } from 'react-i18next';
 
 function App() {
   const [options, setOptions] = React.useState<string[]>([]);
@@ -38,6 +41,8 @@ function App() {
   const [isKoModeActive, setIsKoModeActive] = React.useState<boolean>(false);
   const [last5, setLast5] = React.useState<string[]>([]);
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
+  const {t, i18n} = useTranslation();
+  const [currentLanguage, setCurrentLanguage] = React.useState(i18n.language);
 
   useEffect(()=> {
     setLast5(decisions.slice(0,5));
@@ -93,19 +98,25 @@ function App() {
     }
   };
 
-  const tooltipMessage = 'Jede Option kann nur 1x ausgewählt werden.'
+  const toggleLanguage = () => {
+    const newLang = currentLanguage === "en" ? "de" : "en";
+    i18n.changeLanguage(newLang);
+    setCurrentLanguage(newLang);
+  };
+
+  const tooltipMessage = t("koModeTooltip");
 
   return (
     <Container>
       <ContentContainer>
         <Logo src={logoSrc} width='70%'/>
-        <Paragraph>Optionen eingeben</Paragraph>
+        <Paragraph>{t("title")}</Paragraph>
         <form onSubmit={onFormSubmit}>
           <InputField type="text" ref={inputRef} />
           <Spacing />
           <ButtonContainer>
-            <Button type='submit'>Hinzufügen</Button>
-            <Button secondary onClick={resetOptions}>Zurücksetzen</Button>
+            <Button type='submit'>{t("add")}</Button>
+            <Button secondary onClick={resetOptions}>{t("reset")}</Button>
           </ButtonContainer>
           <CheckboxContainer>
             <span data-tip={tooltipMessage}>
@@ -115,7 +126,7 @@ function App() {
               </CheckBoxWrapper>
             </span>
             <Paragraph>
-              KO-Mode
+              {t("koMode")}
             </Paragraph>
           </CheckboxContainer>
         </form>
@@ -128,14 +139,14 @@ function App() {
         <Spacing />
         <Spacing />
         {options.length > 0 && (
-          <DecideButton onClick={makeDecision}>Entscheiden</DecideButton>
+          <DecideButton onClick={makeDecision}>{t("decide")}</DecideButton>
         )}
         <Spacing />
 
         {decisions.length > 0 && (
         <>
           <DecisionParagraph>
-            Entscheidung
+          {t("decision")}
           </DecisionParagraph>
               
           <img src={arrowIcon} height='15px' alt='arrowIcon' />
@@ -147,7 +158,7 @@ function App() {
           </CardContainer>
               )}
           <Paragraph>
-            Letzte 5 Entscheidungen
+          {t("lastFiveDecisions")}
           </Paragraph>
           {last5.map((decision) => (
             <CardContainer>
@@ -170,7 +181,7 @@ function App() {
           multiline
         />
         <ImportButton onClick={() => { setIsOpen(true) }}><img src={importIcon} height='auto' alt='importIcon' /></ImportButton>
-        <a href="https://kuttermedia.de"><KuttermediaLogo src={kuttermediaLogoSrc}/></a>
+        <LanguageButton onClick={toggleLanguage}>{t("language")}</LanguageButton>
       </ContentContainer>
       <Modal 
         isOpen={isOpen} 
