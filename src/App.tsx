@@ -5,7 +5,6 @@ import DecisionCard from './components/decision-card';
 import OptionPill from './components/option-pill';
 import arrowIcon from './icons/arrow-down-sign-to-navigate.svg';
 import logoSrc from './icons/decidey-logo-v2.2-yellow.png';
-import kuttermediaLogoSrc from './icons/kuttermedia_logo-quad-white.png';
 import importIcon from './icons/import.svg';
 import { 
   Button, 
@@ -22,11 +21,8 @@ import {
   Spacing,
   DecideButton,
   DecisionParagraph,
-  Footer,
   Logo,
   ImportButton,
-  UploadIcon,
-  KuttermediaLogo,
   LanguageButton
 } from './components';
 import FileImport from './components/file-import';

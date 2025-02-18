@@ -17,7 +17,7 @@ const resources: Record<string, { translation: Record<string, string> }> = {
       selectFileLong: 'Select a file to import it.',
       import: 'Import',
       jsonError: 'The imported JSON file is not valid. Please upload a JSON with an array of strings.',
-      koMode: 'KO-mode',
+      koMode: 'KO mode',
       koModeTooltip:'Removes selected option after choice.'
     },
   },
